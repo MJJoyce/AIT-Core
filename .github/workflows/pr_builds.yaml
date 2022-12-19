@@ -20,8 +20,8 @@ jobs:
         uses: abatilo/actions-poetry@v2
         with:
           poetry-version: 1.2
-      #- name: Install Package
-        #run: poetry install
+      - name: Install Package
+        run: poetry install
       - name: Set AIT Config
         run: echo "AIT_CONFIG=./config/config.yaml" >> $GITHUB_ENV
       - name: Install tox-gh-actions
