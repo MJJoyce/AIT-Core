@@ -20,10 +20,10 @@ jobs:
         uses: abatilo/actions-poetry@v2
         with:
           poetry-version: ${{ matrix.poetry-version }}
-      - name: Source Poetry Env
-        run: source $(poetry env info --path)/bin/activate
+      #- name: Source Poetry Env
+        #run: source $(poetry env info --path)/bin/activate
       - name: Install Package
         run: poetry install
       - name: Run All The Checks
-        run: tox
+        run: poetry run pytest
 
