@@ -27,7 +27,7 @@ jobs:
       - name: Install Package
         run: poetry install
       - name: Set AIT Config
-        run: echo "AIT_CONFIG=$(`pwd`)/config/config.yaml" >> $GITHUB_ENV
+        run: echo "AIT_CONFIG=./config/config.yaml" >> $GITHUB_ENV
       - name: Run All The Checks
         run: poetry run pytest
 
