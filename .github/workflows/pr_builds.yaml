@@ -25,8 +25,14 @@ jobs:
         run: poetry install
       - name: Set AIT Config
         run: echo "AIT_CONFIG=./config/config.yaml" >> $GITHUB_ENV
-      - name: Install Tox Plugin
-        run: python -m pip install tox-gh-actions < 3
+      - name: "Install dependencies"
+        run: |
+          set -xe
+          python -VV
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade tox-gh-actions
+      #- name: Install Tox Plugin
+        #run: python -m pip install tox-gh-actions < 3
         #run: poetry add tox-gh-actions < 3
       - name: Run Tox
         run: tox
